@@ -27,24 +27,29 @@ class NYTHeadlineViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        if let searchTerm = searchBar.text {
-            getRequest(searchTerm)
+        if let query = searchBar.text {
+            // search searchTerm for whitespaes
+            let whitespace = NSCharacterSet.whitespaceCharacterSet()
+            
+            let range = query.rangeOfCharacterFromSet(whitespace)
+            
+            if range != nil {
+                // convert whitespaces to %20
+                let adjustedQueryForWhitespaces = query.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+                getRequest(adjustedQueryForWhitespaces)
+            } else {
+                getRequest(query)
+            }
         }
     }
 
-    func getRequest(searchTerm: String) {
-        Alamofire.request(.GET, "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=\(searchTerm)")
+    func getRequest(query: String) {
+        Alamofire.request(.GET, "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=\(query)")
             .responseCollection { (response: Response<[NYTHeadlines], BackendError>) in
                 debugPrint(response)
                 
                 self.headlines = response.result.value!
                 print(self.headlines)
-                //.description
-                //.data
-                //.reponse
-                //.result
-                
-            
                 self.tableView.reloadData()
         }
     }
