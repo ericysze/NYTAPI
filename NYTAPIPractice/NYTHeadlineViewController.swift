@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class NYTHeadlineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NYTHeadlineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
 
@@ -23,15 +23,28 @@ class NYTHeadlineViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate   = self
         tableView.dataSource = self
         
-        getRequest()
+        searchBar.delegate = self
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if let searchTerm = searchBar.text {
+            getRequest(searchTerm)
+        }
     }
 
-    func getRequest() {
-        Alamofire.request(.GET, "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=brexit")
+    func getRequest(searchTerm: String) {
+        Alamofire.request(.GET, "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=\(searchTerm)")
             .responseCollection { (response: Response<[NYTHeadlines], BackendError>) in
                 debugPrint(response)
                 
                 self.headlines = response.result.value!
+                print(self.headlines)
+                //.description
+                //.data
+                //.reponse
+                //.result
+                
+            
                 self.tableView.reloadData()
         }
     }
