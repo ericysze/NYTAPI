@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		15193B121D270B2600EAB8F1 /* NYTHeadlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15193B111D270B2600EAB8F1 /* NYTHeadlines.swift */; };
+		154452EC1D30BE790070E37C /* NYTImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154452EB1D30BE790070E37C /* NYTImageLoader.swift */; };
+		15EE61AF1D2A3A60003627DD /* NYTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EE61AD1D2A3A60003627DD /* NYTTableViewCell.swift */; };
+		15EE61B01D2A3A60003627DD /* NYTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15EE61AE1D2A3A60003627DD /* NYTTableViewCell.xib */; };
 		15F791F81D26E95D006C7110 /* ResponseObjectSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F791F71D26E95D006C7110 /* ResponseObjectSerializable.swift */; };
 		15F792001D2703D7006C7110 /* NYTHeadlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F791FF1D2703D7006C7110 /* NYTHeadlineViewController.swift */; };
 		15FCE9331D26E0FF0042AAE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCE9321D26E0FF0042AAE9 /* AppDelegate.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		15193B111D270B2600EAB8F1 /* NYTHeadlines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTHeadlines.swift; sourceTree = "<group>"; };
+		154452EB1D30BE790070E37C /* NYTImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTImageLoader.swift; sourceTree = "<group>"; };
+		15EE61AD1D2A3A60003627DD /* NYTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTTableViewCell.swift; sourceTree = "<group>"; };
+		15EE61AE1D2A3A60003627DD /* NYTTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NYTTableViewCell.xib; sourceTree = "<group>"; };
 		15F791F71D26E95D006C7110 /* ResponseObjectSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObjectSerializable.swift; sourceTree = "<group>"; };
 		15F791FF1D2703D7006C7110 /* NYTHeadlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTHeadlineViewController.swift; sourceTree = "<group>"; };
 		15FCE92F1D26E0FF0042AAE9 /* NYTAPIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTAPIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,9 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				15FCE9321D26E0FF0042AAE9 /* AppDelegate.swift */,
-				15F791FF1D2703D7006C7110 /* NYTHeadlineViewController.swift */,
 				15193B111D270B2600EAB8F1 /* NYTHeadlines.swift */,
+				154452EB1D30BE790070E37C /* NYTImageLoader.swift */,
+				15F791FF1D2703D7006C7110 /* NYTHeadlineViewController.swift */,
 				15F791F71D26E95D006C7110 /* ResponseObjectSerializable.swift */,
+				15EE61AD1D2A3A60003627DD /* NYTTableViewCell.swift */,
+				15EE61AE1D2A3A60003627DD /* NYTTableViewCell.xib */,
 				15FCE9361D26E0FF0042AAE9 /* Main.storyboard */,
 				15FCE9391D26E0FF0042AAE9 /* Assets.xcassets */,
 				15FCE93B1D26E0FF0042AAE9 /* LaunchScreen.storyboard */,
@@ -158,6 +167,7 @@
 				15FCE93D1D26E0FF0042AAE9 /* LaunchScreen.storyboard in Resources */,
 				15FCE93A1D26E0FF0042AAE9 /* Assets.xcassets in Resources */,
 				15FCE9381D26E0FF0042AAE9 /* Main.storyboard in Resources */,
+				15EE61B01D2A3A60003627DD /* NYTTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154452EC1D30BE790070E37C /* NYTImageLoader.swift in Sources */,
 				15FCE9331D26E0FF0042AAE9 /* AppDelegate.swift in Sources */,
+				15EE61AF1D2A3A60003627DD /* NYTTableViewCell.swift in Sources */,
 				15193B121D270B2600EAB8F1 /* NYTHeadlines.swift in Sources */,
 				15F792001D2703D7006C7110 /* NYTHeadlineViewController.swift in Sources */,
 				15F791F81D26E95D006C7110 /* ResponseObjectSerializable.swift in Sources */,

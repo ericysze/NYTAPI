@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQX-6V-Rj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498" y="429"/>
+            <point key="canvasLocation" x="-486" y="312"/>
         </scene>
         <!--Headline View Controller-->
         <scene sceneID="tne-QT-ifu">
