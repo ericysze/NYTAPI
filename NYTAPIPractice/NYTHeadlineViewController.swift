@@ -75,9 +75,14 @@ class NYTHeadlineViewController: UIViewController, UITableViewDelegate, UITableV
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NYTHeadlinesIdentifier", forIndexPath: indexPath) as! NYTTableViewCell
         
-        if let headline = data?[indexPath.row].headline, let imgURL = data?[indexPath.row].image {
+        if let headline = data?[indexPath.row].headline, let imgURL = data?[indexPath.row].imageURL {
             cell.headlineLabel.text = headline
-            cell.articleImage.image = imgURL
+//            cell.articleImage.image = imgURL
+            ImageLoader.sharedLoader.imageForUrl(imgURL, completionHandler:{(image: UIImage?, url: String) in
+                if let im = image {
+                    cell.articleImage.image = im
+                }
+            })
         }
         
 //        let imgURL = data?[indexPath.row].image
@@ -86,6 +91,8 @@ class NYTHeadlineViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    //// ?
+    //// should be in model because this is the logic/computation for the controller to display, also the image data is in the model, that is where this should be as well, then called by cellForRowAtIndexPath
     static func loadImageFromUrl(url: String, view: UIImageView){
         
         // Create Url from string
